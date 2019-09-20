@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="$USER_HOME$/.Rider2018.3/system/extResources" t="IncludeRecursive" />
+    <e p="$USER_HOME$/.Rider2018.3/system/resharper-host/local/Transient/ReSharperHost/v183/SolutionCaches/_Builder.851161075.00" t="ExcludeRecursive" />
+    <e p="$PROJECT_DIR$" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Gaia" t="Include">
+          <e p="3rd Party Samplers" t="Include">
+            <e p="3DForge" t="Include">
+              <e p="Documents" t="Include">
+                <e p="Village Exteriors Kit v1.2.1 - user guide.txt" t="Include" />
+              </e>
+            </e>
+            <e p="Ambient Samples" t="Include">
+              <e p="Ambient Water Sample" t="Include">
+                <e p="Shader" t="Include">
+                  <e p="2019 Shaders" t="Include">
+                    <e p="2019 Water Sample HD.txt" t="Include" />
+                  </e>
+                  <e p="Simple Water Sample HD.txt" t="Include" />
+                  <e p="Simple Water Sample LW.txt" t="Include" />
+                  <e p="Simple Water Sample.shader" t="Include" />
+                </e>
+              </e>
+              <e p="Readme.txt" t="Include" />
+              <e p="Scripts" t="Include">
+                <e p="Editor" t="Include">
+                  <e p="AmbientSkiesSamples.cs" t="Include" />
+                  <e p="AmbientWaterSamples.cs" t="Include" />
+                </e>
+                <e p="GaiaHDPlanarReflections.cs" t="Include" />
+                <e p="GaiaReflectionProbeUpdate.cs" t="Include" />
+                <e p="GaiaUnderWaterEffects.cs" t="Include" />
+              </e>
+            </e>
+            <e p="GameTexturesDotCom" t="Include">
+              <e p="_Readme.txt" t="Include" />
+            </e>
+            <e p="MotuProprio" t="Include">
+              <e p="RealRock Vol I" t="Include">
+                <e p="Readme.txt" t="Include" />
+              </e>
+            </e>
+            <e p="NatureManufacture" t="Include">
+              <e p="_Readme.txt" t="Include" />
+            </e>
+            <e p="README.txt" t="Include" />
+            <e p="Synty Studios" t="Include">
+              <e p="GeNa Spawners" t="Include">
+                <e p="Readme.txt" t="Include" />
+              </e>
+              <e p="Readme.txt" t="Include" />
+            </e>
+            <e p="Turboscalpeur" t="Include">
+              <e p="Readme.txt" t="Include" />
+            </e>
+          </e>
+          <e p="Dependencies" t="Include">
+            <e p="Package Manager" t="Include">
+              <e p="PackageImportList2018_1.txt" t="Include" />
+              <e p="PackageImportList2018_2.txt" t="Include" />
+              <e p="PackageImportList2018_3_Builtin.txt" t="Include" />
+              <e p="PackageImportList2018_3_HD.txt" t="Include" />
+              <e p="PackageImportList2018_3_LW.txt" t="Include" />
+              <e p="PackageImportList2018_4_Builtin.txt" t="Include" />
+              <e p="PackageImportList2018_4_HD.txt" t="Include" />
+              <e p="PackageImportList2018_4_LW.txt" t="Include" />
+              <e p="PackageImportList2019_1_Builtin.txt" t="Include" />
+              <e p="PackageImportList2019_1_HD.txt" t="Include" />
+              <e p="PackageImportList2019_1_LW.txt" t="Include" />
+            </e>
+          </e>
+          <e p="Documentation" t="Include">
+            <e p="Release Notes v1_5_0.txt" t="Include" />
+            <e p="Release Notes v1_5_1.txt" t="Include" />
+            <e p="Release Notes v1_5_2.txt" t="Include" />
+            <e p="Release Notes v1_5_3.txt" t="Include" />
+            <e p="Release Notes v1_6_0.txt" t="Include" />
+            <e p="Release Notes v1_6_1.txt" t="Include" />
+            <e p="Release Notes v1_7_0.txt" t="Include" />
+            <e p="Release Notes v1_8_0.txt" t="Include" />
+            <e p="Release Notes v1_9_0.txt" t="Include" />
+            <e p="Release Notes v1_9_1.txt" t="Include" />
+            <e p="Release Notes v1_9_2.txt" t="Include" />
+            <e p="Release Notes v1_9_3.txt" t="Include" />
+            <e p="Release Notes v1_9_3_1.txt" t="Include" />
+            <e p="Release Notes v1_9_4.txt" t="Include" />
+            <e p="Release Notes v1_9_5.txt" t="Include" />
+            <e p="Release Notes v1_9_5_1.txt" t="Include" />
+          </e>
+          <e p="Scripts" t="Include">
+            <e p="Attributes" t="Include">
+              <e p="PreviewTextureAttribute.cs" t="Include" />
+            </e>
+            <e p="Common" t="Include">
+              <e p="AppConfig.cs" t="Include" />
+              <e p="DropStack.cs" t="Include" />
+              <e p="Editor" t="Include">
+                <e p="AddCustomWelcomeAttribute.cs" t="Include" />
+                <e p="AssetUtils.cs" t="Include" />
+                <e p="Culture.cs" t="Include" />
+                <e p="CustomWelcome.cs" t="Include" />
+                <e p="EditorLanguagePack.cs" t="Include" />
+                <e p="EditorUtils Custom.cs" t="Include" />
+                <e p="EditorUtils EditorGUILayout.cs" t="Include" />
+                <e p="EditorUtils GUILayout.cs" t="Include" />
+                <e p="EditorUtils SliderRange.cs" t="Include" />
+                <e p="EditorUtils.cs" t="Include" />
+                <e p="IPWEditor.cs" t="Include" />
+                <e p="Internal" t="Include">
+                  <e p="PWConstInternal.cs" t="Include" />
+                </e>
+                <e p="Module Accessors" t="Include">
+                  <e p="Dev.cs" t="Include" />
+                  <e p="Translate.cs" t="Include" />
+                </e>
+                <e p="PWConst.cs" t="Include" />
+                <e p="PWEditor.cs" t="Include" />
+                <e p="PWMessage.cs" t="Include" />
+                <e p="PWNews.cs" t="Include" />
+                <e p="PWWelcome.cs" t="Include" />
+                <e p="PWWelcomeScreen.cs" t="Include" />
+                <e p="Prod.cs" t="Include" />
+                <e p="RemoteContent.cs" t="Include" />
+                <e p="RemoteContentUpdater.cs" t="Include" />
+                <e p="Resources" t="Include">
+                  <e p="CommonMenu_c1.txt" t="Include" />
+                </e>
+                <e p="Tab.cs" t="Include" />
+                <e p="TabSet.cs" t="Include" />
+              </e>
+              <e p="LanguagePack.cs" t="Include" />
+              <e p="LocalizationCategory.cs" t="Include" />
+              <e p="LocalizationItem.cs" t="Include" />
+              <e p="UBrush.cs" t="Include" />
+              <e p="Utils.cs" t="Include" />
+            </e>
+            <e p="Editor" t="Include">
+              <e p="AboutEditor.cs" t="Include" />
+              <e p="EditorUtils.cs" t="Include" />
+              <e p="ExportTerrain.cs" t="Include" />
+              <e p="GaiaDefaultsEditor.cs" t="Include" />
+              <e p="GaiaDefinesEditor.cs" t="Include" />
+              <e p="GaiaExtensionExporterEditor.cs" t="Include" />
+              <e p="GaiaGrassMaskExporterEditor.cs" t="Include" />
+              <e p="GaiaManagerEditor.cs" t="Include" />
+              <e p="GaiaMaskExporterEditor.cs" t="Include" />
+              <e p="GaiaNormalExporterEditor.cs" t="Include" />
+              <e p="GaiaPipelineUtilsEditor.cs" t="Include" />
+              <e p="GaiaRemovalEditor.cs" t="Include" />
+              <e p="GaiaResourceEditor.cs" t="Include" />
+              <e p="GaiaScriptOrderManager.cs" t="Include" />
+              <e p="GaiaSessionEditor.cs" t="Include" />
+              <e p="GaiaSessionManagerEditor.cs" t="Include" />
+              <e p="GaiaStdMenu.cs" t="Include" />
+              <e p="GaiaTerrainExplorerEditor.cs" t="Include" />
+              <e p="GaiaTerrainHeightAdjuster.cs" t="Include" />
+              <e p="GaiaWaterflowMapEditor.cs" t="Include" />
+              <e p="GaiaWelcome.cs" t="Include" />
+              <e p="PWApp.cs" t="Include" />
+              <e p="PWCommonMenuAG.cs" t="Include" />
+              <e p="ResourceVisualiserEditor.cs" t="Include" />
+              <e p="ScannerEditor.cs" t="Include" />
+              <e p="ShorelineMaskerEditor.cs" t="Include" />
+              <e p="SpawnerEditor.cs" t="Include" />
+              <e p="SpawnerGroupEditor.cs" t="Include" />
+              <e p="StamperEditor.cs" t="Include" />
+              <e p="TerrainHelperEditor.cs" t="Include" />
+              <e p="TexturePickerEditor.cs" t="Include" />
+            </e>
+            <e p="ExtensionSystem" t="Include">
+              <e p="Compatible" t="Include">
+                <e p="AQUASWaterSet.cs" t="Include" />
+                <e p="CountrySidePack.cs" t="Include" />
+                <e p="DesktopGroundCoverPackage.cs" t="Include" />
+                <e p="DesktopTreesPackage.cs" t="Include" />
+                <e p="DistingoGaiaExtension.cs" t="Include" />
+                <e p="GameTexturesCom.cs" t="Include" />
+                <e p="Tenkoku.cs" t="Include" />
+                <e p="ThirdPersonController.cs" t="Include" />
+                <e p="VillageExteriorsKit.cs" t="Include" />
+                <e p="VolumetricFog.cs" t="Include" />
+                <e p="uConstruct.cs" t="Include" />
+              </e>
+              <e p="GaiaCompatiblePackage.cs" t="Include" />
+              <e p="GaiaCompatiblePublisher.cs" t="Include" />
+              <e p="GaiaExtensionManager.cs" t="Include" />
+              <e p="GaiaXtnFooter.txt" t="Include" />
+              <e p="GaiaXtnHeader.txt" t="Include" />
+              <e p="Template.cs" t="Include" />
+              <e p="TemplateFrame.cs" t="Include" />
+            </e>
+            <e p="GaiaConstants.cs" t="Include" />
+            <e p="JsonSerialiser" t="Include">
+              <e p="Converters" t="Include">
+                <e p="Unity" t="Include">
+                  <e p="AnimationCurve_DirectConverter.cs" t="Include" />
+                  <e p="Bounds_DirectConverter.cs" t="Include" />
+                  <e p="GameObject_DirectConverter.cs" t="Include" />
+                  <e p="Gradient_DirectConverter.cs" t="Include" />
+                  <e p="Keyframe_DirectConverter.cs" t="Include" />
+                  <e p="LayerMask_DirectConverter.cs" t="Include" />
+                  <e p="Rect_DirectConverter.cs" t="Include" />
+                  <e p="Texture2D_DirectConverter.cs" t="Include" />
+                </e>
+                <e p="fsArrayConverter.cs" t="Include" />
+                <e p="fsDateConverter.cs" t="Include" />
+                <e p="fsDictionaryConverter.cs" t="Include" />
+                <e p="fsEnumConverter.cs" t="Include" />
+                <e p="fsForwardConverter.cs" t="Include" />
+                <e p="fsGuidConverter.cs" t="Include" />
+                <e p="fsIEnumerableConverter.cs" t="Include" />
+                <e p="fsKeyValuePairConverter.cs" t="Include" />
+                <e p="fsNullableConverter.cs" t="Include" />
+                <e p="fsPrimitiveConverter.cs" t="Include" />
+                <e p="fsReflectedConverter.cs" t="Include" />
+                <e p="fsTypeConverter.cs" t="Include" />
+                <e p="fsWeakReferenceConverter.cs" t="Include" />
+              </e>
+              <e p="Internal" t="Include">
+                <e p="fsCyclicReferenceManager.cs" t="Include" />
+                <e p="fsOption.cs" t="Include" />
+                <e p="fsPortableReflection.cs" t="Include" />
+                <e p="fsTypeExtensions.cs" t="Include" />
+                <e p="fsVersionManager.cs" t="Include" />
+                <e p="fsVersionedType.cs" t="Include" />
+              </e>
+              <e p="Reflection" t="Include">
+                <e p="fsMetaProperty.cs" t="Include" />
+                <e p="fsMetaType.cs" t="Include" />
+                <e p="fsReflectionUtility.cs" t="Include" />
+                <e p="fsTypeLookup.cs" t="Include" />
+              </e>
+              <e p="_ReadMe.txt" t="Include" />
+              <e p="fsAotCompilationManager.cs" t="Include" />
+              <e p="fsBaseConverter.cs" t="Include" />
+              <e p="fsConfig.cs" t="Include" />
+              <e p="fsContext.cs" t="Include" />
+              <e p="fsConverter.cs" t="Include" />
+              <e p="fsConverterRegistrar.cs" t="Include" />
+              <e p="fsData.cs" t="Include" />
+              <e p="fsDirectConverter.cs" t="Include" />
+              <e p="fsExceptions.cs" t="Include" />
+              <e p="fsISerializationCallbacks.cs" t="Include" />
+              <e p="fsIgnoreAttribute.cs" t="Include" />
+              <e p="fsJsonParser.cs" t="Include" />
+              <e p="fsJsonPrinter.cs" t="Include" />
+              <e p="fsMemberSerialization.cs" t="Include" />
+              <e p="fsObjectAttribute.cs" t="Include" />
+              <e p="fsObjectProcessor.cs" t="Include" />
+              <e p="fsPropertyAttribute.cs" t="Include" />
+              <e p="fsResult.cs" t="Include" />
+              <e p="fsSerializer.cs" t="Include" />
+            </e>
+            <e p="ResourcesSystem" t="Include">
+              <e p="GaiaDefaults.cs" t="Include" />
+              <e p="GaiaResource.cs" t="Include" />
+              <e p="GaiaSettings.cs" t="Include" />
+              <e p="GaiaWorldManager.cs" t="Include" />
+              <e p="ResourceProtoDNA.cs" t="Include" />
+              <e p="ResourceProtoDetail.cs" t="Include" />
+              <e p="ResourceProtoDetailSO.cs" t="Include" />
+              <e p="ResourceProtoGameObject.cs" t="Include" />
+              <e p="ResourceProtoGameObjectSO.cs" t="Include" />
+              <e p="ResourceProtoStamp.cs" t="Include" />
+              <e p="ResourceProtoTexture.cs" t="Include" />
+              <e p="ResourceProtoTextureSO.cs" t="Include" />
+              <e p="ResourceProtoTree.cs" t="Include" />
+              <e p="ResourceProtoTreeSO.cs" t="Include" />
+              <e p="ResourceVisualiser.cs" t="Include" />
+            </e>
+            <e p="ScanningSystem" t="Include">
+              <e p="BinaryReaderMac.cs" t="Include" />
+              <e p="Scanner.cs" t="Include" />
+            </e>
+            <e p="SessionSystem" t="Include">
+              <e p="GaiaOperation.cs" t="Include" />
+              <e p="GaiaSession.cs" t="Include" />
+              <e p="GaiaSessionManager.cs" t="Include" />
+            </e>
+            <e p="SpawningSystem" t="Include">
+              <e p="SpawnCriteria.cs" t="Include" />
+              <e p="SpawnExtensions" t="Include">
+                <e p="SpawnGrassExtension.cs" t="Include" />
+                <e p="SpawnTextureExtension.cs" t="Include" />
+              </e>
+              <e p="SpawnInfo.cs" t="Include" />
+              <e p="SpawnRule.cs" t="Include" />
+              <e p="SpawnRuleExtension.cs" t="Include" />
+              <e p="Spawner.cs" t="Include" />
+              <e p="SpawnerGroup.cs" t="Include" />
+              <e p="TreeManager.cs" t="Include" />
+            </e>
+            <e p="StampingSystem" t="Include">
+              <e p="RuntimeStamper.cs" t="Include" />
+              <e p="Stamper.cs" t="Include" />
+            </e>
+            <e p="Utils" t="Include">
+              <e p="FractalGenerator.cs" t="Include" />
+              <e p="GaiaMessages.cs" t="Include" />
+              <e p="GaiaPipelineUtils.cs" t="Include" />
+              <e p="GaiaSceneInfo.cs" t="Include" />
+              <e p="GaiaScriptOrder.cs" t="Include" />
+              <e p="GaiaSplatPrototype.cs" t="Include" />
+              <e p="GaiaUtils.cs" t="Include" />
+              <e p="HeightMap.cs" t="Include" />
+              <e p="QuadTree.cs" t="Include" />
+              <e p="ScaleTexture.cs" t="Include" />
+              <e p="SimplexNoiseGenerator.cs" t="Include" />
+              <e p="Singleton.cs" t="Include" />
+              <e p="TerrainHelper.cs" t="Include" />
+              <e p="TimedInstance.cs" t="Include" />
+              <e p="UnityHeightMap.cs" t="Include" />
+              <e p="Utils.cs" t="Include" />
+              <e p="WaterFlowMap.cs" t="Include" />
+              <e p="XorshiftPlus.cs" t="Include" />
+            </e>
+            <e p="ValueAdds" t="Include">
+              <e p="CameraController.cs" t="Include" />
+              <e p="FrameRateManager.cs" t="Include" />
+              <e p="FreeCamera.cs" t="Include" />
+              <e p="Growth.cs" t="Include" />
+              <e p="ScreenShotter.cs" t="Include" />
+              <e p="UIConfiguration.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Gaia Dependencies" t="Include">
+          <e p="Standard Assets" t="Include">
+            <e p="Characters" t="Include">
+              <e p="FirstPersonCharacter" t="Include">
+                <e p="FirstPersonCharacterGuidelines.txt" t="Include" />
+                <e p="Scripts" t="Include">
+                  <e p="FirstPersonController.cs" t="Include" />
+                  <e p="HeadBob.cs" t="Include" />
+                  <e p="MouseLook.cs" t="Include" />
+                  <e p="RigidbodyFirstPersonController.cs" t="Include" />
+                </e>
+              </e>
+              <e p="ThirdPersonCharacter" t="Include">
+                <e p="Scripts" t="Include">
+                  <e p="AICharacterControl.cs" t="Include" />
+                  <e p="ThirdPersonCharacter.cs" t="Include" />
+                  <e p="ThirdPersonUserControl.cs" t="Include" />
+                </e>
+                <e p="ThirdPersonCharacterGuidelines.txt" t="Include" />
+              </e>
+            </e>
+            <e p="CrossPlatformInput" t="Include">
+              <e p="CrossPlatformInputGuidelines.txt" t="Include" />
+              <e p="Scripts" t="Include">
+                <e p="CrossPlatformInputManager.cs" t="Include" />
+                <e p="PlatformSpecific" t="Include">
+                  <e p="MobileInput.cs" t="Include" />
+                  <e p="StandaloneInput.cs" t="Include" />
+                </e>
+                <e p="VirtualInput.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Editor" t="Include">
+              <e p="CrossPlatformInput" t="Include">
+                <e p="CrossPlatformInputInitialize.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Utility" t="Include">
+              <e p="CurveControlledBob.cs" t="Include" />
+              <e p="FOVKick.cs" t="Include" />
+              <e p="LerpControlledBob.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Modern_GUI_Skin" t="Include">
+          <e p="Demo_Assets" t="Include">
+            <e p="scripts" t="Include">
+              <e p="GUI_Demo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Scripts" t="Include">
+          <e p="BuildableStructure.cs" t="Include" />
+          <e p="CollisionChecker.cs" t="Include" />
+          <e p="Managers" t="Include">
+            <e p="InputManager.cs" t="Include" />
+            <e p="ObjectPlacementManager.cs" t="Include" />
+          </e>
+          <e p="UI" t="Include">
+            <e p="BuildMenu.cs" t="Include" />
+            <e p="BuildTogglePrefab.cs" t="Include" />
+          </e>
+        </e>
+        <e p="TextMesh Pro" t="Include">
+          <e p="Examples &amp; Extras" t="Include">
+            <e p="Fonts" t="Include">
+              <e p="Anton OFL.txt" t="Include" />
+              <e p="Bangers - OFL.txt" t="Include" />
+              <e p="Oswald-Bold - OFL.txt" t="Include" />
+            </e>
+            <e p="Scripts" t="Include">
+              <e p="Benchmark01.cs" t="Include" />
+              <e p="Benchmark01_UGUI.cs" t="Include" />
+              <e p="Benchmark02.cs" t="Include" />
+              <e p="Benchmark03.cs" t="Include" />
+              <e p="Benchmark04.cs" t="Include" />
+              <e p="CameraController.cs" t="Include" />
+              <e p="ChatController.cs" t="Include" />
+              <e p="EnvMapAnimator.cs" t="Include" />
+              <e p="ObjectSpin.cs" t="Include" />
+              <e p="ShaderPropAnimator.cs" t="Include" />
+              <e p="SimpleScript.cs" t="Include" />
+              <e p="SkewTextExample.cs" t="Include" />
+              <e p="TMP_DigitValidator.cs" t="Include" />
+              <e p="TMP_ExampleScript_01.cs" t="Include" />
+              <e p="TMP_FrameRateCounter.cs" t="Include" />
+              <e p="TMP_PhoneNumberValidator.cs" t="Include" />
+              <e p="TMP_TextEventCheck.cs" t="Include" />
+              <e p="TMP_TextEventHandler.cs" t="Include" />
+              <e p="TMP_TextInfoDebugTool.cs" t="Include" />
+              <e p="TMP_TextSelector_A.cs" t="Include" />
+              <e p="TMP_TextSelector_B.cs" t="Include" />
+              <e p="TMP_UiFrameRateCounter.cs" t="Include" />
+              <e p="TMPro_InstructionOverlay.cs" t="Include" />
+              <e p="TeleType.cs" t="Include" />
+              <e p="TextConsoleSimulator.cs" t="Include" />
+              <e p="TextMeshProFloatingText.cs" t="Include" />
+              <e p="TextMeshSpawner.cs" t="Include" />
+              <e p="VertexColorCycler.cs" t="Include" />
+              <e p="VertexJitter.cs" t="Include" />
+              <e p="VertexShakeA.cs" t="Include" />
+              <e p="VertexShakeB.cs" t="Include" />
+              <e p="VertexZoom.cs" t="Include" />
+              <e p="WarpTextExample.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Fonts" t="Include">
+            <e p="LiberationSans - OFL.txt" t="Include" />
+          </e>
+          <e p="Resources" t="Include">
+            <e p="LineBreaking Following Characters.txt" t="Include" />
+            <e p="LineBreaking Leading Characters.txt" t="Include" />
+            <e p="Shaders" t="Include">
+              <e p="TMP_Bitmap-Custom-Atlas.shader" t="Include" />
+              <e p="TMP_Bitmap-Mobile.shader" t="Include" />
+              <e p="TMP_Bitmap.shader" t="Include" />
+              <e p="TMP_SDF Overlay.shader" t="Include" />
+              <e p="TMP_SDF-Mobile Masking.shader" t="Include" />
+              <e p="TMP_SDF-Mobile Overlay.shader" t="Include" />
+              <e p="TMP_SDF-Mobile.shader" t="Include" />
+              <e p="TMP_SDF-Surface-Mobile.shader" t="Include" />
+              <e p="TMP_SDF-Surface.shader" t="Include" />
+              <e p="TMP_SDF.shader" t="Include" />
+              <e p="TMP_Sprite.shader" t="Include" />
+              <e p="TMPro.cginc" t="Include" />
+              <e p="TMPro_Properties.cginc" t="Include" />
+              <e p="TMPro_Surface.cginc" t="Include" />
+            </e>
+          </e>
+          <e p="Sprites" t="Include">
+            <e p="EmojiOne Attribution.txt" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="Builder.sln" t="IncludeFlat" />
+      <e p="Library" t="ExcludeRecursive" />
+      <e p="Temp" t="ExcludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+      </e>
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>
