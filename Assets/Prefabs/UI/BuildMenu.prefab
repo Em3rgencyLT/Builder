@@ -95,6 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5922f4418b0df4742ac12d7073269cfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _objectPlacementManager: {fileID: 0}
   _buildableStructureManager: {fileID: 0}
   _buildOptionIcon: {fileID: 8649840114134351974, guid: db02a724e91c6b3a998da98ebaaeb4eb,
     type: 3}
