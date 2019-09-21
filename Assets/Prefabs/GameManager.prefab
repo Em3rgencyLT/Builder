@@ -48,10 +48,10 @@ MonoBehaviour:
     type: 2}
   _placementBlockedMaterial: {fileID: 2100000, guid: 6e9eabe8dcdb033c587d112f9a5f08b9,
     type: 2}
-  _objectBeingPlaced: {fileID: 0}
   _buildableStructures:
   - {fileID: 3944560419085770233, guid: 49ff66d8237034f45b749a51d5115799, type: 3}
   - {fileID: 114005739338073826, guid: 68247db3106e5cc4fa678a7e678cf3f3, type: 3}
+  _rotationSpeed: 100
 --- !u!114 &3538652608907351933
 MonoBehaviour:
   m_ObjectHideFlags: 0

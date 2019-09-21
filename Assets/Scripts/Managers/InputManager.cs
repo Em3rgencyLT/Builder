@@ -23,6 +23,7 @@ namespace Managers
         private void Update()
         {
             HandleMouseInput();
+            HandleKeyboardInput();
         }
 
         private void HandleMouseInput()
@@ -36,6 +37,20 @@ namespace Managers
                 if (_objectPlacementManager.FinishObjectPlacement())
                 {
                     _buildMenu.ClearSelection();
+                }
+            }
+        }
+
+        private void HandleKeyboardInput()
+        {
+            if (_objectPlacementManager.IsInBuildMode())
+            {
+                if (Input.GetKey(KeyCode.Q))
+                {
+                    _objectPlacementManager.RotateObjectBeingPlaced(-1);
+                } else if (Input.GetKey(KeyCode.E))
+                {
+                    _objectPlacementManager.RotateObjectBeingPlaced(1);
                 }
             }
         }

@@ -9,14 +9,15 @@ namespace Managers
     {
         [SerializeField] private Material _placementAllowedMaterial;
         [SerializeField] private Material _placementBlockedMaterial;
-        [SerializeField] private GameObject _objectBeingPlaced;
         [SerializeField] private List<BuildableStructure> _buildableStructures;
+        [SerializeField] private float _rotationSpeed = 100f;
 
-        public List<BuildableStructure> BuildableStructures => _buildableStructures;
-
+        private GameObject _objectBeingPlaced;
         private CollisionChecker _collisionChecker;
         private List<Material> _originalMaterials;
 
+        public List<BuildableStructure> BuildableStructures => _buildableStructures;
+        
         private void Update()
         {
             if (_objectBeingPlaced != null)
@@ -79,6 +80,20 @@ namespace Managers
                 });
             ResetValues();
             return true;
+        }
+
+        public void RotateObjectBeingPlaced(int direction)
+        {
+            if (_objectBeingPlaced == null)
+            {
+                return;
+            }
+            _objectBeingPlaced.transform.Rotate(Vector3.up * (_rotationSpeed * Time.deltaTime * direction));
+        }
+
+        public bool IsInBuildMode()
+        {
+            return _objectBeingPlaced != null;
         }
 
         private void UpdateObjectPosition()
