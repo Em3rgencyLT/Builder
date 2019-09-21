@@ -10,6 +10,9 @@ namespace Managers
         [SerializeField] private Material _placementAllowedMaterial;
         [SerializeField] private Material _placementBlockedMaterial;
         [SerializeField] private GameObject _objectBeingPlaced;
+        [SerializeField] private List<BuildableStructure> _buildableStructures;
+
+        public List<BuildableStructure> BuildableStructures => _buildableStructures;
 
         private CollisionChecker _collisionChecker;
         private List<Material> _originalMaterials;
@@ -20,7 +23,6 @@ namespace Managers
             {
                 UpdateObjectPosition();
                 UpdateObjectMaterial();
-                HandlePlacementInput();
             }
         }
         
@@ -45,7 +47,7 @@ namespace Managers
                 .ForEach(script => script.enabled = false);
         }
 
-        private void CancelObjectPlacement()
+        public void CancelObjectPlacement()
         {
             if (_objectBeingPlaced != null)
             {
@@ -55,8 +57,17 @@ namespace Managers
             ResetValues();
         }
         
-        private void FinishObjectPlacement()
+        public bool FinishObjectPlacement()
         {
+            if (_collisionChecker == null)
+            {
+                return false;
+            }
+
+            if (!_collisionChecker.IsCollidingOnlyWithTerrain())
+            {
+                return false;
+            }
             _objectBeingPlaced.GetComponents<MonoBehaviour>()
                 .ToList()
                 .ForEach(script => script.enabled = true);
@@ -67,6 +78,7 @@ namespace Managers
                     
                 });
             ResetValues();
+            return true;
         }
 
         private void UpdateObjectPosition()
@@ -82,7 +94,7 @@ namespace Managers
 
         private void UpdateObjectMaterial()
         {
-            if (_collisionChecker.CollidingObjects.Count == 0)
+            if (_collisionChecker.IsCollidingOnlyWithTerrain())
             {
                 _objectBeingPlaced.GetComponentsInChildren<MeshRenderer>().ToList().ForEach(renderer =>
                     {
@@ -94,17 +106,6 @@ namespace Managers
                 {
                     renderer.material = _placementBlockedMaterial;
                 });
-            }
-        }
-
-        private void HandlePlacementInput()
-        {
-            if (Input.GetKeyDown(KeyCode.Mouse1))
-            {
-                CancelObjectPlacement();
-            } else if (Input.GetKeyDown(KeyCode.Mouse0))
-            {
-                FinishObjectPlacement();
             }
         }
 

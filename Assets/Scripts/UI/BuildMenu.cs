@@ -13,16 +13,15 @@ namespace UI
     public class BuildMenu : MonoBehaviour
     {
         [SerializeField] private ObjectPlacementManager _objectPlacementManager;
-        [SerializeField] private BuildableStructureManager _buildableStructureManager;
         [SerializeField] private RectTransform _buildOptionIcon;
 
         private ToggleGroup _toggleGroup;
 
         private void Awake()
         {
-            if (_buildableStructureManager == null)
+            if (_objectPlacementManager == null)
             {
-                Debug.LogError("BuildMenu is missing BuildableStructureManager instance!");
+                Debug.LogError("BuildMenu is missing ObjectPlacementManager instance!");
             }
 
             _toggleGroup = GetComponent<ToggleGroup>();
@@ -30,7 +29,7 @@ namespace UI
 
         private void Start()
         {
-            _buildableStructureManager.BuildableStructures.ForEach(structure =>
+            _objectPlacementManager.BuildableStructures.ForEach(structure =>
             {
                 RectTransform iconPanel = Instantiate(_buildOptionIcon);
                 iconPanel.parent = transform;
@@ -43,6 +42,11 @@ namespace UI
                 text.text = structure.MenuTitle;
                 toggle.onValueChanged.AddListener(CheckToggledOption);
             });
+        }
+
+        public void ClearSelection()
+        {
+            _toggleGroup.SetAllTogglesOff();
         }
 
         private void CheckToggledOption(bool value)

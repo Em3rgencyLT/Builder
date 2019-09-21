@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 218185438802236347}
   - component: {fileID: 218185438802236344}
-  - component: {fileID: 32689103}
+  - component: {fileID: 3538652608907351933}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -49,7 +49,10 @@ MonoBehaviour:
   _placementBlockedMaterial: {fileID: 2100000, guid: 6e9eabe8dcdb033c587d112f9a5f08b9,
     type: 2}
   _objectBeingPlaced: {fileID: 0}
---- !u!114 &32689103
+  _buildableStructures:
+  - {fileID: 3944560419085770233, guid: 49ff66d8237034f45b749a51d5115799, type: 3}
+  - {fileID: 114005739338073826, guid: 68247db3106e5cc4fa678a7e678cf3f3, type: 3}
+--- !u!114 &3538652608907351933
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -58,9 +61,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 218185438802236345}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89b9cc881ff04f04860b29a048797309, type: 3}
+  m_Script: {fileID: 11500000, guid: 7503e0c504604b6f9fac91a3d8a10cb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buildableStructures:
-  - {fileID: 3944560419085770233, guid: 49ff66d8237034f45b749a51d5115799, type: 3}
-  - {fileID: 114005739338073826, guid: 68247db3106e5cc4fa678a7e678cf3f3, type: 3}
