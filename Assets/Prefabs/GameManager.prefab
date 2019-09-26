@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 218185438802236347}
   - component: {fileID: 3999294881230795980}
+  - component: {fileID: 4241173966765784140}
   - component: {fileID: 3538652608907351933}
   m_Layer: 0
   m_Name: GameManager
@@ -52,6 +53,27 @@ MonoBehaviour:
   - {fileID: 3944560419085770233, guid: 49ff66d8237034f45b749a51d5115799, type: 3}
   - {fileID: 114005739338073826, guid: 68247db3106e5cc4fa678a7e678cf3f3, type: 3}
   _rotationSpeed: 100
+--- !u!114 &4241173966765784140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 218185438802236345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 536d53c2202f4d508ae1784f99c47a17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _resources:
+  - _type: 0
+    _title: Construction Scrap
+    _icon: {fileID: 21300066, guid: 148a7416d4c344a42bb28cb23ee31708, type: 3}
+    _amount: 0
+  - _type: 0
+    _title: Jack
+    _icon: {fileID: 21300066, guid: 148a7416d4c344a42bb28cb23ee31708, type: 3}
+    _amount: 0
 --- !u!114 &3538652608907351933
 MonoBehaviour:
   m_ObjectHideFlags: 0
