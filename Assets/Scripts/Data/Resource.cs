@@ -1,28 +1,28 @@
 using System;
+using Enums;
 using UnityEngine;
 
 namespace Data
 {   
+    //TODO: remove serializable and public fields, they are only used to debug in inspector
     [Serializable]
     public class Resource
     {
-        public enum TypeName
-        {
-            BUILDING_MATERIAL,
-            MONEY
-        }
-
-        public TypeName _type;
-        public string _title;
+        public ResourceType _resourceType;
         public Sprite _icon;
         public int _amount;
 
-        public Resource(TypeName type, string title, Sprite icon, int amount = 0)
+        public Resource(ResourceType resourceType, Sprite icon, int amount = 0)
         {
-            _type = type;
-            _title = title;
+            _resourceType = resourceType;
             _icon = icon;
             _amount = amount;
         }
+
+        public ResourceType ResourceType => _resourceType;
+
+        public Sprite Icon => _icon;
+
+        public int Amount => _amount;
     }
 }
