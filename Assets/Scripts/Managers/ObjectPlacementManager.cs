@@ -2,22 +2,30 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using DefaultNamespace;
+using Helpers;
 
 namespace Managers
 {
+    [RequireComponent(typeof(ResourceManager))]
     public class ObjectPlacementManager : MonoBehaviour
     {
-        [SerializeField] private Material _placementAllowedMaterial;
-        [SerializeField] private Material _placementBlockedMaterial;
-        [SerializeField] private List<BuildableStructure> _buildableStructures;
-        [SerializeField] private float _rotationSpeed = 100f;
+        [SerializeField] private Material placementAllowedMaterial;
+        [SerializeField] private Material placementBlockedMaterial;
+        [SerializeField] private List<BuildableStructure> buildableStructures;
+        [SerializeField] private float rotationSpeed = 100f;
 
+        private ResourceManager _resourceManager;
         private GameObject _objectBeingPlaced;
         private CollisionChecker _collisionChecker;
         private List<Material> _originalMaterials;
 
-        public List<BuildableStructure> BuildableStructures => _buildableStructures;
-        
+        public List<BuildableStructure> BuildableStructures => buildableStructures;
+
+        private void Awake()
+        {
+            _resourceManager = GetComponent<ResourceManager>();
+        }
+
         private void Update()
         {
             if (_objectBeingPlaced != null)
@@ -32,7 +40,7 @@ namespace Managers
             CancelObjectPlacement();
             _originalMaterials = new List<Material>();
             _objectBeingPlaced = Instantiate(objectToPlace.gameObject);
-            _objectBeingPlaced.GetComponentsInChildren<MeshRenderer>().ToList().ForEach(renderer => _originalMaterials.Add(renderer.material));
+            _objectBeingPlaced.GetComponentsInChildren<MeshRenderer>().ToList().ForEach(meshRenderer => _originalMaterials.Add(meshRenderer.material));
             _collisionChecker = _objectBeingPlaced.GetComponent<CollisionChecker>();
 
             if (_collisionChecker == null)
@@ -60,26 +68,46 @@ namespace Managers
         
         public bool FinishObjectPlacement()
         {
-            if (_collisionChecker == null)
+            if (!IsObjectPlacementValid())
             {
                 return false;
             }
-
-            if (!_collisionChecker.IsCollidingOnlyWithTerrain())
-            {
-                return false;
-            }
+            
             _objectBeingPlaced.GetComponents<MonoBehaviour>()
                 .ToList()
                 .ForEach(script => script.enabled = true);
             int i = 0;
-            _objectBeingPlaced.GetComponentsInChildren<MeshRenderer>().ToList().ForEach(renderer =>
+            _objectBeingPlaced.GetComponentsInChildren<MeshRenderer>().ToList().ForEach(meshRenderer =>
                 {
-                    renderer.material = _originalMaterials[i++];
+                    meshRenderer.material = _originalMaterials[i++];
                     
                 });
             ResetValues();
             return true;
+        }
+
+        private bool IsObjectPlacementValid()
+        {
+            if (_collisionChecker == null)
+            {
+                return false;
+            }
+            if (!_collisionChecker.IsCollidingOnlyWithTerrain())
+            {
+                return false;
+            }
+
+            return HasEnoughResourcesForObjectBeingPlaced();
+        }
+
+        private bool HasEnoughResourcesForObjectBeingPlaced()
+        {
+            var buildableStructure = _objectBeingPlaced.GetComponent<BuildableStructure>();
+            var unmetRequirements = buildableStructure.ResourceRequirements
+                .FindAll(requirement => !_resourceManager.HasEnoughResource(requirement.Type, requirement.Amount))
+                .Count;
+
+            return unmetRequirements == 0;
         }
 
         public void RotateObjectBeingPlaced(int direction)
@@ -88,7 +116,7 @@ namespace Managers
             {
                 return;
             }
-            _objectBeingPlaced.transform.Rotate(Vector3.up * (_rotationSpeed * Time.deltaTime * direction));
+            _objectBeingPlaced.transform.Rotate(Vector3.up * (rotationSpeed * Time.deltaTime * direction));
         }
 
         public bool IsInBuildMode()
@@ -111,15 +139,15 @@ namespace Managers
         {
             if (_collisionChecker.IsCollidingOnlyWithTerrain())
             {
-                _objectBeingPlaced.GetComponentsInChildren<MeshRenderer>().ToList().ForEach(renderer =>
+                _objectBeingPlaced.GetComponentsInChildren<MeshRenderer>().ToList().ForEach(meshRenderer =>
                     {
-                        renderer.material = _placementAllowedMaterial;
+                        meshRenderer.material = placementAllowedMaterial;
                     });
             } else if (_collisionChecker.CollidingObjects.Count > 0)
             {
-                _objectBeingPlaced.GetComponentsInChildren<MeshRenderer>().ToList().ForEach(renderer =>
+                _objectBeingPlaced.GetComponentsInChildren<MeshRenderer>().ToList().ForEach(meshRenderer =>
                 {
-                    renderer.material = _placementBlockedMaterial;
+                    meshRenderer.material = placementBlockedMaterial;
                 });
             }
         }
