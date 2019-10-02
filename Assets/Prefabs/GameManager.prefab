@@ -65,15 +65,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 536d53c2202f4d508ae1784f99c47a17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _resources:
-  - _type: 0
-    _title: Construction Scrap
-    _icon: {fileID: 21300066, guid: 148a7416d4c344a42bb28cb23ee31708, type: 3}
-    _amount: 0
-  - _type: 0
-    _title: Jack
-    _icon: {fileID: 21300066, guid: 148a7416d4c344a42bb28cb23ee31708, type: 3}
-    _amount: 0
+  _resources: []
+  defaultResourceSprite: {fileID: 21300066, guid: 148a7416d4c344a42bb28cb23ee31708,
+    type: 3}
 --- !u!114 &3538652608907351933
 MonoBehaviour:
   m_ObjectHideFlags: 0
