@@ -13,6 +13,10 @@ namespace Managers
 
         private void Awake()
         {
+            if (resourceDisplays == null)
+            {
+                resourceDisplays = new List<ResourceDisplay>();
+            }
             AddDefaultResources();
         }
 

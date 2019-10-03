@@ -45,14 +45,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 152e76cafce5b0a44ad0b4278b5bee73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _placementAllowedMaterial: {fileID: 2100000, guid: f852944b4d35c0be4bb9e950136cd6d6,
+  placementAllowedMaterial: {fileID: 2100000, guid: f852944b4d35c0be4bb9e950136cd6d6,
     type: 2}
-  _placementBlockedMaterial: {fileID: 2100000, guid: 6e9eabe8dcdb033c587d112f9a5f08b9,
+  placementBlockedMaterial: {fileID: 2100000, guid: 6e9eabe8dcdb033c587d112f9a5f08b9,
     type: 2}
-  _buildableStructures:
+  buildableStructures:
   - {fileID: 3944560419085770233, guid: 49ff66d8237034f45b749a51d5115799, type: 3}
   - {fileID: 114005739338073826, guid: 68247db3106e5cc4fa678a7e678cf3f3, type: 3}
-  _rotationSpeed: 100
+  rotationSpeed: 100
 --- !u!114 &4241173966765784140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65,7 +65,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 536d53c2202f4d508ae1784f99c47a17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _resources: []
   defaultResourceSprite: {fileID: 21300066, guid: 148a7416d4c344a42bb28cb23ee31708,
     type: 3}
 --- !u!114 &3538652608907351933

@@ -23,6 +23,10 @@ namespace Managers
 
         private void Awake()
         {
+            if (buildableStructures == null)
+            {
+                buildableStructures = new List<BuildableStructure>();
+            }
             _resourceManager = GetComponent<ResourceManager>();
         }
 

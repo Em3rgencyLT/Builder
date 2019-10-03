@@ -18,5 +18,13 @@ namespace DefaultNamespace
         public string MenuTitle => menuTitle;
 
         public List<Resource> ResourceRequirements => resourceRequirements;
+
+        private void Awake()
+        {
+            if (resourceRequirements == null)
+            {
+                resourceRequirements = new List<Resource>();
+            }
+        }
     }
 }
