@@ -5,7 +5,7 @@ using ExtensionMethods;
 
 namespace UI
 {
-    public class ResourceDisplay : MonoBehaviour
+    public class ResourceDisplayPanel : MonoBehaviour
     {
         [SerializeField] private ResourcePanel panelPrefab;
         [SerializeField] private ResourceManager resourceManager;
@@ -19,13 +19,13 @@ namespace UI
 
         private void Start()
         {
-            resourceManager.Resources.ForEach(resource =>
+            resourceManager.ResourceDisplays.ForEach(display =>
             {
                 var panel = Instantiate(panelPrefab, transform, true);
-                panel.Image.sprite = resource.Icon;
-                panel.Text.text = resource.ResourceType.Label();
-                panel.Amount.text = resource.Amount.ToString();
-                panel.ResourceType = resource.ResourceType;
+                panel.Image.sprite = display.Sprite;
+                panel.Text.text = display.Resource.ResourceType.Label();
+                panel.Amount.text = display.Resource.Amount.ToString();
+                panel.ResourceType = display.Resource.ResourceType;
                 _resourcePanels.Add(panel);
             });
         }

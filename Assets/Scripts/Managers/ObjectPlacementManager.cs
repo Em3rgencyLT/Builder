@@ -104,7 +104,7 @@ namespace Managers
         {
             var buildableStructure = _objectBeingPlaced.GetComponent<BuildableStructure>();
             var unmetRequirements = buildableStructure.ResourceRequirements
-                .FindAll(requirement => !_resourceManager.HasEnoughResource(requirement.Type, requirement.Amount))
+                .FindAll(requirement => !_resourceManager.HasEnoughResource(requirement))
                 .Count;
 
             return unmetRequirements == 0;
