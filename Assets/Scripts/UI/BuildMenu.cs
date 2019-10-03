@@ -5,6 +5,7 @@ using DefaultNamespace;
 using Managers;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace UI
@@ -12,14 +13,16 @@ namespace UI
     [RequireComponent(typeof(RectTransform), typeof(ToggleGroup))]
     public class BuildMenu : MonoBehaviour
     {
-        [SerializeField] private ObjectPlacementManager _objectPlacementManager;
-        [SerializeField] private RectTransform _buildOptionIcon;
+        [SerializeField] private ObjectPlacementManager objectPlacementManager;
+        [SerializeField] private ResourceManager resourceManager;
+        [SerializeField] private RectTransform buildOptionIcon;
 
         private ToggleGroup _toggleGroup;
+        private List<Toggle> _toggles;
 
         private void Awake()
         {
-            if (_objectPlacementManager == null)
+            if (objectPlacementManager == null)
             {
                 Debug.LogError("BuildMenu is missing ObjectPlacementManager instance!");
             }
@@ -29,11 +32,12 @@ namespace UI
 
         private void Start()
         {
-            _objectPlacementManager.BuildableStructures.ForEach(structure =>
+            _toggles = new List<Toggle>();
+            objectPlacementManager.BuildableStructures.ForEach(structure =>
             {
-                RectTransform iconPanel = Instantiate(_buildOptionIcon);
-                iconPanel.parent = transform;
+                RectTransform iconPanel = Instantiate(buildOptionIcon, transform, true);
                 Toggle toggle = iconPanel.GetComponentInChildren<Toggle>();
+                _toggles.Add(toggle);
                 toggle.group = _toggleGroup;
                 toggle.GetComponent<BuildTogglePrefab>().RepresentedPrefab = structure;
                 Image image = toggle.GetComponentInChildren<Image>();
@@ -42,6 +46,11 @@ namespace UI
                 text.text = structure.MenuTitle;
                 toggle.onValueChanged.AddListener(CheckToggledOption);
             });
+        }
+
+        private void Update()
+        {
+            CheckToggleInteractability();
         }
 
         public void ClearSelection()
@@ -55,8 +64,24 @@ namespace UI
             {
                 BuildableStructure prefab = _toggleGroup.ActiveToggles().First().GetComponent<BuildTogglePrefab>()
                     .RepresentedPrefab;
-                _objectPlacementManager.BeginObjectPlacement(prefab);
+                objectPlacementManager.BeginObjectPlacement(prefab);
             }
+        }
+
+        private void CheckToggleInteractability()
+        {
+            _toggles.ForEach(toggle =>
+            {
+                var buildableStructure = toggle.GetComponent<BuildTogglePrefab>().RepresentedPrefab;
+                var hasEnoughResources = resourceManager.HasEnoughResources(buildableStructure.ResourceRequirements);
+                if (toggle.interactable && !hasEnoughResources)
+                {
+                    toggle.interactable = false;
+                } else if (!toggle.interactable && hasEnoughResources)
+                {
+                    toggle.interactable = true;
+                }
+            });
         }
     }
 }

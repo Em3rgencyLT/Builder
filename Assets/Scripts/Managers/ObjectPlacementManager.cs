@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using DefaultNamespace;
+using ExtensionMethods;
 using Helpers;
 
 namespace Managers
@@ -82,10 +83,18 @@ namespace Managers
                 .ForEach(script => script.enabled = true);
             int i = 0;
             _objectBeingPlaced.GetComponentsInChildren<MeshRenderer>().ToList().ForEach(meshRenderer =>
-                {
-                    meshRenderer.material = _originalMaterials[i++];
+            {
+                meshRenderer.material = _originalMaterials[i++];
                     
-                });
+            });
+            var buildableStructure = _objectBeingPlaced.GetComponent<BuildableStructure>();
+            buildableStructure.ResourceRequirements.ForEach(requirement =>
+            {
+                if (!_resourceManager.ModifyResourceAmount(requirement.ResourceType, requirement.Amount * -1))
+                {
+                    Debug.LogError($"Could not deduct {requirement.Amount} {requirement.ResourceType.Label()} while building {buildableStructure.MenuTitle}!");
+                }
+            });
             ResetValues();
             return true;
         }
@@ -106,12 +115,8 @@ namespace Managers
 
         private bool HasEnoughResourcesForObjectBeingPlaced()
         {
-            var buildableStructure = _objectBeingPlaced.GetComponent<BuildableStructure>();
-            var unmetRequirements = buildableStructure.ResourceRequirements
-                .FindAll(requirement => !_resourceManager.HasEnoughResource(requirement))
-                .Count;
-
-            return unmetRequirements == 0;
+            return _resourceManager
+                .HasEnoughResources(_objectBeingPlaced.GetComponent<BuildableStructure>().ResourceRequirements);
         }
 
         public void RotateObjectBeingPlaced(int direction)
@@ -141,19 +146,27 @@ namespace Managers
 
         private void UpdateObjectMaterial()
         {
+            if (!HasEnoughResourcesForObjectBeingPlaced())
+            {
+                ChangeObjectBeingPlacedMaterial(false);
+                return;
+            }
+            
             if (_collisionChecker.IsCollidingOnlyWithTerrain())
             {
-                _objectBeingPlaced.GetComponentsInChildren<MeshRenderer>().ToList().ForEach(meshRenderer =>
-                    {
-                        meshRenderer.material = placementAllowedMaterial;
-                    });
+                ChangeObjectBeingPlacedMaterial(true);
             } else if (_collisionChecker.CollidingObjects.Count > 0)
             {
-                _objectBeingPlaced.GetComponentsInChildren<MeshRenderer>().ToList().ForEach(meshRenderer =>
-                {
-                    meshRenderer.material = placementBlockedMaterial;
-                });
+                ChangeObjectBeingPlacedMaterial(false);
             }
+        }
+
+        private void ChangeObjectBeingPlacedMaterial(bool allowed)
+        {
+            _objectBeingPlaced.GetComponentsInChildren<MeshRenderer>().ToList().ForEach(meshRenderer =>
+            {
+                meshRenderer.material = allowed ? placementAllowedMaterial : placementBlockedMaterial;
+            });
         }
 
         private void ResetValues()

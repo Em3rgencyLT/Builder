@@ -43,18 +43,18 @@ namespace Managers
         }
 
 
-        public int ModifyResourceAmount(ResourceType type, int change)
+        public bool ModifyResourceAmount(ResourceType type, int change)
         {
             var resourceDisplay = GetResourceDisplay(type);
             var resource = resourceDisplay.Resource;
             if (resourceDisplay.Resource.Amount + change < 0)
             {
-                return resource.Amount;
+                return false;
             }
 
             if (!resourceDisplays.Remove(resourceDisplay))
             {
-                return resource.Amount;
+                return false;
             }
             
             var newResource = new ResourceDisplay(
@@ -62,12 +62,17 @@ namespace Managers
                 resourceDisplay.Sprite
             );
             resourceDisplays.Add(newResource);
-            return newResource.Resource.Amount;
+            return true;
         }
 
-        public bool HasEnoughResource(Resource resource)
+        private bool HasEnoughResource(Resource requirement)
         {
-            return GetResource(resource.ResourceType).Amount >= resource.Amount;
+            return GetResource(requirement.ResourceType).Amount >= requirement.Amount;
+        }
+
+        public bool HasEnoughResources(List<Resource> requirements)
+        {
+            return requirements.All(HasEnoughResource);
         }
     }
 }
