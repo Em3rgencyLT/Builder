@@ -1,17 +1,21 @@
+using System;
+using UnityEngine;
+
 namespace Data.GOAP
 {
+    [Serializable]
     public class State
     {
-        private readonly string _parameter;
-        private readonly bool _value;
+        [SerializeField] private readonly string _name;
+        [SerializeField] private readonly bool _value;
 
-        public State(string parameter, bool value)
+        public State(string name, bool value)
         {
-            _parameter = parameter;
+            _name = name;
             _value = value;
         }
 
-        public string Parameter => _parameter;
+        public string Name => _name;
 
         public bool Value => _value;
     }
