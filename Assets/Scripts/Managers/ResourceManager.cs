@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Data;
 using Enums;
 using UnityEngine;
@@ -7,7 +8,7 @@ namespace Managers
 {
     public class ResourceManager : MonoBehaviour
     {
-        [SerializeField] private List<Resource> resources;
+        [SerializeField] private List<ResourceDisplay> resourceDisplays;
         [SerializeField] private Sprite defaultResourceSprite;
 
         private void Awake()
@@ -17,42 +18,52 @@ namespace Managers
 
         private void AddDefaultResources()
         {
-            var jack = new Resource(ResourceType.Money, defaultResourceSprite, 200);
-            var metal = new Resource(ResourceType.Metal, defaultResourceSprite, 10);
-            var lumber = new Resource(ResourceType.Lumber, defaultResourceSprite, 10);
-            var slag = new Resource(ResourceType.Concrete, defaultResourceSprite, 50);
+            var jack = new ResourceDisplay(new Resource(ResourceType.Money, 200), defaultResourceSprite);
+            var metal = new ResourceDisplay(new Resource(ResourceType.Metal, 10), defaultResourceSprite);
+            var lumber = new ResourceDisplay(new Resource(ResourceType.Lumber, 10), defaultResourceSprite);
+            var slag = new ResourceDisplay(new Resource(ResourceType.Concrete, 50), defaultResourceSprite);
             
-            resources.AddRange(new[]{jack, metal, lumber, slag});
+            resourceDisplays.AddRange(new[]{jack, metal, lumber, slag});
         }
 
-        public List<Resource> Resources => resources;
+        public List<ResourceDisplay> ResourceDisplays => resourceDisplays;
 
         public Resource GetResource(ResourceType type)
         {
-            return resources.Find(resource => resource.ResourceType == type);
+            return resourceDisplays.Select(display => display.Resource).First(resource => resource.ResourceType == type);
         }
+        
+        private ResourceDisplay GetResourceDisplay(ResourceType type)
+        {
+            return resourceDisplays.First(resource => resource.Resource.ResourceType == type);
+        }
+
 
         public int ModifyResourceAmount(ResourceType type, int change)
         {
-            var resource = GetResource(type);
-            if (resource.Amount + change < 0)
+            var resourceDisplay = GetResourceDisplay(type);
+            var resource = resourceDisplay.Resource;
+            if (resourceDisplay.Resource.Amount + change < 0)
             {
                 return resource.Amount;
             }
 
-            if (!resources.Remove(resource))
+            if (!resourceDisplays.Remove(resourceDisplay))
             {
                 return resource.Amount;
             }
             
-            var newResource = new Resource(type, resource.Icon, resource.Amount + change);
-            resources.Add(newResource);
-            return newResource.Amount;
+            var newResource = new ResourceDisplay(
+                new Resource(resource.ResourceType, resource.Amount + change), 
+                resourceDisplay.Sprite
+            );
+            resourceDisplays.Add(newResource);
+            return newResource.Resource.Amount;
         }
 
-        public bool HasEnoughResource(ResourceType type, int desiredAmount)
+        public bool HasEnoughResource(Resource resource)
         {
-            return GetResource(type).Amount >= desiredAmount;
+            return GetResource(resource.ResourceType).Amount >= resource.Amount;
         }
     }
 }
