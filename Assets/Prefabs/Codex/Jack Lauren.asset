@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aa4ea2e6ebe4549be64ee12bc3abd9e, type: 3}
+  m_Name: Jack Lauren
+  m_EditorClassIdentifier: 
+  label: Jack Lauren
+  content: 'Jack Lauren is one of {ref_0}. He is a young adult male, born somewhere
+    in Loisiana, cajun country. Jack''s features are very distinct, due to him being
+    an abino. He was pale skin, and red eyes.
+
+
+    {img_0}
+
+
+    Uncharacteristically, his albinism and red eyes give him improved eye sight, as
+    opposed to the norm of being a detriment.
+
+
+    Jack is good with throwing knives.'
+  images: []
+  references: []
