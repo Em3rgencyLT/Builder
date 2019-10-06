@@ -1,0 +1,588 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b400ee936d64d0e93e3892c7c321e09, type: 3}
+  m_Name: SoundDatabase_ExampleMusic
+  m_EditorClassIdentifier: 
+  DatabaseName: Example Music
+  OutputAudioMixerGroup: {fileID: 0}
+  SoundNames:
+  - No Sound
+  - No Sound
+  Database:
+  - {fileID: 114188078994651994}
+  - {fileID: 114159110572762290}
+  - {fileID: 114073627878771160}
+  - {fileID: 114705141789700342}
+  - {fileID: 114293353380660926}
+  - {fileID: 114104844164383086}
+  - {fileID: 114487483429371536}
+  - {fileID: 114833562094765284}
+  - {fileID: 114045658618145814}
+  - {fileID: 114089413920914424}
+  - {fileID: 114951417856114896}
+  - {fileID: 114840096535018568}
+  - {fileID: 114438619364727200}
+  - {fileID: 114209436670788242}
+  - {fileID: 114628066377329424}
+  - {fileID: 114282873016682236}
+  - {fileID: 114363948914557124}
+  - {fileID: 114178565160054550}
+  - {fileID: 114326789602378438}
+--- !u!114 &114045658618145814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f6c631d933489d4ca7328a2a5983e10, type: 3}
+  m_Name: Nanobots
+  m_EditorClassIdentifier: 
+  DatabaseName: Example Music
+  SoundName: Nanobots
+  IgnoreListenerPause: 1
+  Volume:
+    MinValue: 0
+    MaxValue: 0
+  Pitch:
+    MinValue: 0
+    MaxValue: 0
+  SpatialBlend: 0
+  Loop: 0
+  Mode: 0
+  ResetSequenceAfterInactiveTime: 0
+  SequenceResetTime: 5
+  Sounds:
+  - AudioClip: {fileID: 8300000, guid: ac6f3ae1184b4614baacf21d43dc39de, type: 3}
+    Weight: 1
+--- !u!114 &114073627878771160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f6c631d933489d4ca7328a2a5983e10, type: 3}
+  m_Name: Exaltina
+  m_EditorClassIdentifier: 
+  DatabaseName: Example Music
+  SoundName: Exaltina
+  IgnoreListenerPause: 1
+  Volume:
+    MinValue: 0
+    MaxValue: 0
+  Pitch:
+    MinValue: 0
+    MaxValue: 0
+  SpatialBlend: 0
+  Loop: 0
+  Mode: 0
+  ResetSequenceAfterInactiveTime: 0
+  SequenceResetTime: 5
+  Sounds:
+  - AudioClip: {fileID: 8300000, guid: 30c57d9bd7d98f24dad91b7ed95657bb, type: 3}
+    Weight: 1
+--- !u!114 &114089413920914424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f6c631d933489d4ca7328a2a5983e10, type: 3}
+  m_Name: Old Vinyl French Jazz Guitar
+  m_EditorClassIdentifier: 
+  DatabaseName: Example Music
+  SoundName: Old Vinyl French Jazz Guitar
+  IgnoreListenerPause: 1
+  Volume:
+    MinValue: 0
+    MaxValue: 0
+  Pitch:
+    MinValue: 0
+    MaxValue: 0
+  SpatialBlend: 0
+  Loop: 0
+  Mode: 0
+  ResetSequenceAfterInactiveTime: 0
+  SequenceResetTime: 5
+  Sounds:
+  - AudioClip: {fileID: 8300000, guid: 6be438be3556eb0458ed42fd309fa3ba, type: 3}
+    Weight: 1
+--- !u!114 &114104844164383086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f6c631d933489d4ca7328a2a5983e10, type: 3}
+  m_Name: Ligata Loop
+  m_EditorClassIdentifier: 
+  DatabaseName: Example Music
+  SoundName: Ligata Loop
+  IgnoreListenerPause: 1
+  Volume:
+    MinValue: 0
+    MaxValue: 0
+  Pitch:
+    MinValue: 0
+    MaxValue: 0
+  SpatialBlend: 0
+  Loop: 0
+  Mode: 0
+  ResetSequenceAfterInactiveTime: 0
+  SequenceResetTime: 5
+  Sounds:
+  - AudioClip: {fileID: 8300000, guid: 8ab8a6d8aa0a5294fa88e752b71fddf5, type: 3}
+    Weight: 1
+--- !u!114 &114159110572762290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f6c631d933489d4ca7328a2a5983e10, type: 3}
+  m_Name: Christmas Villain Loop
+  m_EditorClassIdentifier: 
+  DatabaseName: Example Music
+  SoundName: Christmas Villain Loop
+  IgnoreListenerPause: 1
+  Volume:
+    MinValue: 0
+    MaxValue: 0
+  Pitch:
+    MinValue: 0
+    MaxValue: 0
+  SpatialBlend: 0
+  Loop: 0
+  Mode: 0
+  ResetSequenceAfterInactiveTime: 0
+  SequenceResetTime: 5
+  Sounds:
+  - AudioClip: {fileID: 8300000, guid: d7b48b5e162adc74cb423ea0fdfd12be, type: 3}
+    Weight: 1
+--- !u!114 &114178565160054550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f6c631d933489d4ca7328a2a5983e10, type: 3}
+  m_Name: Tripping Hook
+  m_EditorClassIdentifier: 
+  DatabaseName: Example Music
+  SoundName: Tripping Hook
+  IgnoreListenerPause: 1
+  Volume:
+    MinValue: 0
+    MaxValue: 0
+  Pitch:
+    MinValue: 0
+    MaxValue: 0
+  SpatialBlend: 0
+  Loop: 0
+  Mode: 0
+  ResetSequenceAfterInactiveTime: 0
+  SequenceResetTime: 5
+  Sounds:
+  - AudioClip: {fileID: 8300000, guid: 1ded7ba701b4cde4785a3c8a0dc592b7, type: 3}
+    Weight: 1
+--- !u!114 &114188078994651994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f6c631d933489d4ca7328a2a5983e10, type: 3}
+  m_Name: No Sound
+  m_EditorClassIdentifier: 
+  DatabaseName: Example Music
+  SoundName: No Sound
+  IgnoreListenerPause: 1
+  Volume:
+    MinValue: 0
+    MaxValue: 0
+  Pitch:
+    MinValue: 0
+    MaxValue: 0
+  SpatialBlend: 0
+  Loop: 0
+  Mode: 0
+  ResetSequenceAfterInactiveTime: 0
+  SequenceResetTime: 5
+  Sounds: []
+--- !u!114 &114209436670788242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f6c631d933489d4ca7328a2a5983e10, type: 3}
+  m_Name: Relaxin Jazz Loop
+  m_EditorClassIdentifier: 
+  DatabaseName: Example Music
+  SoundName: Relaxin Jazz Loop
+  IgnoreListenerPause: 1
+  Volume:
+    MinValue: 0
+    MaxValue: 0
+  Pitch:
+    MinValue: 0
+    MaxValue: 0
+  SpatialBlend: 0
+  Loop: 0
+  Mode: 0
+  ResetSequenceAfterInactiveTime: 0
+  SequenceResetTime: 5
+  Sounds:
+  - AudioClip: {fileID: 8300000, guid: 8408d2562f3087e4a9cd1662993f3927, type: 3}
+    Weight: 1
+--- !u!114 &114282873016682236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f6c631d933489d4ca7328a2a5983e10, type: 3}
+  m_Name: Smooth Loop
+  m_EditorClassIdentifier: 
+  DatabaseName: Example Music
+  SoundName: Smooth Loop
+  IgnoreListenerPause: 1
+  Volume:
+    MinValue: 0
+    MaxValue: 0
+  Pitch:
+    MinValue: 0
+    MaxValue: 0
+  SpatialBlend: 0
+  Loop: 0
+  Mode: 0
+  ResetSequenceAfterInactiveTime: 0
+  SequenceResetTime: 5
+  Sounds:
+  - AudioClip: {fileID: 8300000, guid: 00088a07e5d048d46a454910f67611f6, type: 3}
+    Weight: 1
+--- !u!114 &114293353380660926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f6c631d933489d4ca7328a2a5983e10, type: 3}
+  m_Name: Jinxed Instinct
+  m_EditorClassIdentifier: 
+  DatabaseName: Example Music
+  SoundName: Jinxed Instinct
+  IgnoreListenerPause: 1
+  Volume:
+    MinValue: 0
+    MaxValue: 0
+  Pitch:
+    MinValue: 0
+    MaxValue: 0
+  SpatialBlend: 0
+  Loop: 0
+  Mode: 0
+  ResetSequenceAfterInactiveTime: 0
+  SequenceResetTime: 5
+  Sounds:
+  - AudioClip: {fileID: 8300000, guid: 8392db208493cbb449c75f991eba679f, type: 3}
+    Weight: 1
+--- !u!114 &114326789602378438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f6c631d933489d4ca7328a2a5983e10, type: 3}
+  m_Name: Twisted Mango
+  m_EditorClassIdentifier: 
+  DatabaseName: Example Music
+  SoundName: Twisted Mango
+  IgnoreListenerPause: 1
+  Volume:
+    MinValue: 0
+    MaxValue: 0
+  Pitch:
+    MinValue: 0
+    MaxValue: 0
+  SpatialBlend: 0
+  Loop: 0
+  Mode: 0
+  ResetSequenceAfterInactiveTime: 0
+  SequenceResetTime: 5
+  Sounds:
+  - AudioClip: {fileID: 8300000, guid: b2ea5a3d5a013604f827906000a870b4, type: 3}
+    Weight: 1
+--- !u!114 &114363948914557124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f6c631d933489d4ca7328a2a5983e10, type: 3}
+  m_Name: The Sphynx
+  m_EditorClassIdentifier: 
+  DatabaseName: Example Music
+  SoundName: The Sphynx
+  IgnoreListenerPause: 1
+  Volume:
+    MinValue: 0
+    MaxValue: 0
+  Pitch:
+    MinValue: 0
+    MaxValue: 0
+  SpatialBlend: 0
+  Loop: 0
+  Mode: 0
+  ResetSequenceAfterInactiveTime: 0
+  SequenceResetTime: 5
+  Sounds:
+  - AudioClip: {fileID: 8300000, guid: 3550952790436d7429ef75d8f53b4156, type: 3}
+    Weight: 1
+--- !u!114 &114438619364727200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f6c631d933489d4ca7328a2a5983e10, type: 3}
+  m_Name: Rain Dancer
+  m_EditorClassIdentifier: 
+  DatabaseName: Example Music
+  SoundName: Rain Dancer
+  IgnoreListenerPause: 1
+  Volume:
+    MinValue: 0
+    MaxValue: 0
+  Pitch:
+    MinValue: 0
+    MaxValue: 0
+  SpatialBlend: 0
+  Loop: 0
+  Mode: 0
+  ResetSequenceAfterInactiveTime: 0
+  SequenceResetTime: 5
+  Sounds:
+  - AudioClip: {fileID: 8300000, guid: b18de4b77bd620847a00dd8379f4838f, type: 3}
+    Weight: 1
+--- !u!114 &114487483429371536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f6c631d933489d4ca7328a2a5983e10, type: 3}
+  m_Name: Little Ludvig
+  m_EditorClassIdentifier: 
+  DatabaseName: Example Music
+  SoundName: Little Ludvig
+  IgnoreListenerPause: 1
+  Volume:
+    MinValue: 0
+    MaxValue: 0
+  Pitch:
+    MinValue: 0
+    MaxValue: 0
+  SpatialBlend: 0
+  Loop: 0
+  Mode: 0
+  ResetSequenceAfterInactiveTime: 0
+  SequenceResetTime: 5
+  Sounds:
+  - AudioClip: {fileID: 8300000, guid: 6dda42685485b164aaf2161781239876, type: 3}
+    Weight: 1
+--- !u!114 &114628066377329424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f6c631d933489d4ca7328a2a5983e10, type: 3}
+  m_Name: Sleuth Central
+  m_EditorClassIdentifier: 
+  DatabaseName: Example Music
+  SoundName: Sleuth Central
+  IgnoreListenerPause: 1
+  Volume:
+    MinValue: 0
+    MaxValue: 0
+  Pitch:
+    MinValue: 0
+    MaxValue: 0
+  SpatialBlend: 0
+  Loop: 0
+  Mode: 0
+  ResetSequenceAfterInactiveTime: 0
+  SequenceResetTime: 5
+  Sounds:
+  - AudioClip: {fileID: 8300000, guid: c0df14d95ff6fa5458f3d74d9c49bf8e, type: 3}
+    Weight: 1
+--- !u!114 &114705141789700342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f6c631d933489d4ca7328a2a5983e10, type: 3}
+  m_Name: Experiment X
+  m_EditorClassIdentifier: 
+  DatabaseName: Example Music
+  SoundName: Experiment X
+  IgnoreListenerPause: 1
+  Volume:
+    MinValue: 0
+    MaxValue: 0
+  Pitch:
+    MinValue: 0
+    MaxValue: 0
+  SpatialBlend: 0
+  Loop: 0
+  Mode: 0
+  ResetSequenceAfterInactiveTime: 0
+  SequenceResetTime: 5
+  Sounds:
+  - AudioClip: {fileID: 8300000, guid: 0a58c94dcf9bbd646b393cce1e50752a, type: 3}
+    Weight: 1
+--- !u!114 &114833562094765284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f6c631d933489d4ca7328a2a5983e10, type: 3}
+  m_Name: Moon Drops
+  m_EditorClassIdentifier: 
+  DatabaseName: Example Music
+  SoundName: Moon Drops
+  IgnoreListenerPause: 1
+  Volume:
+    MinValue: 0
+    MaxValue: 0
+  Pitch:
+    MinValue: 0
+    MaxValue: 0
+  SpatialBlend: 0
+  Loop: 0
+  Mode: 0
+  ResetSequenceAfterInactiveTime: 0
+  SequenceResetTime: 5
+  Sounds:
+  - AudioClip: {fileID: 8300000, guid: fb01bdc71df5ea44999328697e124c1c, type: 3}
+    Weight: 1
+--- !u!114 &114840096535018568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f6c631d933489d4ca7328a2a5983e10, type: 3}
+  m_Name: Quantum Motion
+  m_EditorClassIdentifier: 
+  DatabaseName: Example Music
+  SoundName: Quantum Motion
+  IgnoreListenerPause: 1
+  Volume:
+    MinValue: 0
+    MaxValue: 0
+  Pitch:
+    MinValue: 0
+    MaxValue: 0
+  SpatialBlend: 0
+  Loop: 0
+  Mode: 0
+  ResetSequenceAfterInactiveTime: 0
+  SequenceResetTime: 5
+  Sounds:
+  - AudioClip: {fileID: 8300000, guid: b55a80a6f58996a418d444a788edb380, type: 3}
+    Weight: 1
+--- !u!114 &114951417856114896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f6c631d933489d4ca7328a2a5983e10, type: 3}
+  m_Name: Otherside Loop
+  m_EditorClassIdentifier: 
+  DatabaseName: Example Music
+  SoundName: Otherside Loop
+  IgnoreListenerPause: 1
+  Volume:
+    MinValue: 0
+    MaxValue: 0
+  Pitch:
+    MinValue: 0
+    MaxValue: 0
+  SpatialBlend: 0
+  Loop: 0
+  Mode: 0
+  ResetSequenceAfterInactiveTime: 0
+  SequenceResetTime: 5
+  Sounds:
+  - AudioClip: {fileID: 8300000, guid: daf29edd61fee5842ad943edd69d864a, type: 3}
+    Weight: 1
