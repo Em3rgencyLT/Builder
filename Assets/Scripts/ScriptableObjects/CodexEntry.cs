@@ -10,5 +10,13 @@ namespace ScriptableObjects
         [SerializeField][TextArea] private string content;
         [SerializeField] private List<Sprite> images;
         [SerializeField] private List<CodexEntry> references;
+
+        public string Label => label;
+
+        public string Content => content;
+
+        public List<Sprite> Images => images;
+
+        public List<CodexEntry> References => references;
     }
 }
