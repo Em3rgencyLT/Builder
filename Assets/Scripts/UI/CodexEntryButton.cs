@@ -18,6 +18,6 @@ namespace UI
             //TODO: attach onclick event here
         }
 
-        public ScriptableObject CodexEntry => codexEntry;
+        public CodexEntry CodexEntry => codexEntry;
     }
 }
