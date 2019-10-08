@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   label: The Deathlands
   content: The Deathlands is what the continental United States has become known as
-    after {ref_0}. Filled with {ref_1}, {ref_2} and various other assorted {{ref_3},
+    after {ref_0}. Filled with {ref_1}, {ref_2} and various other assorted {ref_3},
     it is an inhospitable place.
   images: []
   references: []
