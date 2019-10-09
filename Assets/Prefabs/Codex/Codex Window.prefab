@@ -748,6 +748,8 @@ MonoBehaviour:
   indexPanel: {fileID: 1457003235139704324}
   entryPanel: {fileID: 1457003235728476495}
   codexManager: {fileID: 0}
+  codexEntryRowPrefab: {fileID: 588748638428534490, guid: d65fd7144721f49869154c438e637f4c,
+    type: 3}
   entryButtonPrefab: {fileID: 5122122245917059522, guid: c3c86812806edbb6ba9617a4f8cb9e67,
     type: 3}
   entryTextPrefab: {fileID: 925922171905177105, guid: caec648aa8f648b44ae3d359413216b4,

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Ryan Cawdor
   m_EditorClassIdentifier: 
   label: Ryan Cawdor
-  content: Ryan Cawdor is one of {ref_0}. He is the leader.
+  content: Ryan Cawdor is one of {ref_0} . He is the leader.
   images: []
   references:
   - {fileID: 11400000, guid: cee24154756080313ae0d3cf00f1c9a1, type: 2}

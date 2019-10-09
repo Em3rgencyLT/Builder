@@ -2,6 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+using Data;
+using Doozy.Engine.Extensions;
+using Enums;
 using Managers;
 using ScriptableObjects;
 using TMPro;
@@ -15,11 +18,12 @@ namespace UI
         [SerializeField] private GameObject indexPanel;
         [SerializeField] private GameObject entryPanel;
         [SerializeField] private CodexManager codexManager;
+        [SerializeField] private CodexEntryRow codexEntryRowPrefab;
         [SerializeField] private CodexEntryButton entryButtonPrefab;
         [SerializeField] private TextMeshProUGUI entryTextPrefab;
 
         private List<CodexEntryButton> _indexButtons;
-        const string textVariablePattern = @"{[a-z_0-9]*}";
+        private CodexEntryRow _currentEntryRow;
 
         private void Start()
         {
@@ -29,18 +33,6 @@ namespace UI
                 CreateIndexButton(entry, indexPanel.transform, () => UpdateEntryText(entry), true);
             });
         }
-
-        private void CreateIndexButton(CodexEntry entry, Transform parent, Action onClickCallback, bool addToIndexList)
-        {
-            CodexEntryButton codexEntryButton = Instantiate(entryButtonPrefab, parent);
-            codexEntryButton.AssignCodexEntry(entry);
-            codexEntryButton.GetComponent<Button>().onClick.AddListener(() => onClickCallback());
-            if (addToIndexList)
-            {
-                _indexButtons.Add(codexEntryButton);
-                codexEntryButton.GetComponentInChildren<TextMeshProUGUI>().alignment = TextAlignmentOptions.Center;
-            }
-        }
         
         private void UpdateEntryText(CodexEntry entry)
         {
@@ -48,80 +40,41 @@ namespace UI
             {
                 Destroy(entryPanel.transform.GetChild(i).gameObject);
             }
-            CreateRichTextObjects(entry);
+            var pieces = entry.Content.Split(' ', '\n').ToList();
+            SpawnNewEntryRow();
+            pieces.ForEach(piece => CreateTextPiece(entry, piece));
         }
 
-        private void CreateRichTextObjects(CodexEntry entry)
+        private void SpawnNewEntryRow()
         {
-            var textParsedToIndex = 0;
-            var match = Regex.Match(entry.Content, textVariablePattern);
-            if (!match.Success)
-            {
-                return;
-            }
-            //create the piece before the first match.
-            textParsedToIndex = CreateTextPiece(match, textParsedToIndex, entry);
-            while ((match = match.NextMatch()).Success)
-            {
-                //create the pieces after the first and before last match.
-                textParsedToIndex = CreateTextPiece(match, textParsedToIndex, entry);
-            }
-
-            if (entry.Content.Length > textParsedToIndex)
-            {
-                //create the piece after the last match.
-                CreateTextPiece(null, textParsedToIndex, entry);
-            }
+            _currentEntryRow = Instantiate(codexEntryRowPrefab, entryPanel.transform);
+            Canvas.ForceUpdateCanvases();
         }
-
-        private int CreateTextPiece(Match match, int textParsedToIndex, CodexEntry entry)
+        
+        private void CreateTextPiece(CodexEntry entry, string piece)
         {
-            int textPieceLength;
-            if (match == null)
+            var data = CodexDataBit.FromString(piece);
+            switch (data.Type)
             {
-                textPieceLength = entry.Content.Length - textParsedToIndex;
-            }
-            else
-            {
-                textPieceLength = match.Index - textParsedToIndex;
-            }
-             
-            var textPiece = Instantiate(entryTextPrefab, entryPanel.transform);
-            textPiece.text = entry.Content.Substring(textParsedToIndex, textPieceLength);
-            
-            if (match == null)
-            {
-                return entry.Content.Length - 1;
-            }
-            
-            CreateSpecialElementPiece(entry, entry.Content.Substring(match.Index + 1, match.Length - 2));
-            return match.Index + match.Length;
-        }
-
-        private void CreateSpecialElementPiece(CodexEntry entry, string referenceMatch)
-        {
-            string[] matchData = referenceMatch.Split('_');
-            if (matchData.Length != 2)
-            {
-                Debug.LogError($"Could not parse reference match {referenceMatch}");
-            }
-            switch (matchData[0])
-            {
-                case "ref":
-                    Int32.TryParse(matchData[1], out var index);
-                    var matchingEntry = entry.References.ElementAtOrDefault(index);
-                    if (matchingEntry != null)
-                    {
-                        CreateIndexButton(matchingEntry, entryPanel.transform, () => SwitchToEntry(matchingEntry), false);
-                    }
+                case CodexDataType.Reference:
+                    var matchingEntry = entry.GetReference(data.Value);
+                    CreateIndexButton(matchingEntry, entryPanel.transform, () => SwitchToEntry(matchingEntry), false);
                     return;
-                case "img":
+                case CodexDataType.Image:
+                    CreateWord("image.jpg");
+                    return;
+                case CodexDataType.Text:
+                    CreateWord(data.Value + "\u00A0");
+                    return;
+                case CodexDataType.Newline:
+                    SpawnNewEntryRow();
+                    SpawnNewEntryRow();
                     return;
                 default:
                     return;
             }
         }
-
+        
         private void SwitchToEntry(CodexEntry entry)
         {
             var indexButton = _indexButtons.FirstOrDefault(button => button.CodexEntry.Label == entry.Label);
@@ -134,6 +87,48 @@ namespace UI
             var buttonComponent = indexButton.GetComponent<Button>();
             buttonComponent.onClick.Invoke();
             buttonComponent.Select();
+        }
+        
+        private void CreateIndexButton(CodexEntry entry, Transform parent, Action onClickCallback, bool addToIndexList)
+        {
+            CodexEntryButton codexEntryButton = Instantiate(entryButtonPrefab, parent);
+            codexEntryButton.AssignCodexEntry(entry);
+            codexEntryButton.GetComponent<Button>().onClick.AddListener(() => onClickCallback());
+            var textComponent = codexEntryButton.GetComponentInChildren<TextMeshProUGUI>();
+            var rectTransform = codexEntryButton.GetComponent<RectTransform>();
+            textComponent.alignment = TextAlignmentOptions.Center;
+            if (addToIndexList)
+            {
+                _indexButtons.Add(codexEntryButton);
+                rectTransform.sizeDelta = new Vector2(200, 35);
+                return;
+            }
+
+            var availableSpace = _currentEntryRow.GetRemainingSpace();
+            var requiredSpace = _currentEntryRow.GetRequiredSpace(textComponent.text, 1.18f);
+            if (requiredSpace > availableSpace)
+            {
+                SpawnNewEntryRow();
+            }
+            codexEntryButton.transform.parent = _currentEntryRow.transform;
+            LayoutElement layoutElement = codexEntryButton.GetComponent<LayoutElement>();
+            layoutElement.minWidth = requiredSpace;
+            layoutElement.minHeight = 25;
+        }
+
+        private void CreateWord(string input)
+        {
+            var availableSpace = _currentEntryRow.GetRemainingSpace();
+            var requiredSpace = _currentEntryRow.GetRequiredSpace(input);
+
+            if (requiredSpace > availableSpace)
+            {
+                SpawnNewEntryRow();
+            }
+            
+            var textPiece = Instantiate(entryTextPrefab, _currentEntryRow.transform);
+            textPiece.text = input;
+            textPiece.rectTransform.rect.AddWidth(requiredSpace).AddHeight(20);
         }
     }
 }

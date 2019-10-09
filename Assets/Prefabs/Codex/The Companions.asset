@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: The Companions
   m_EditorClassIdentifier: 
   label: The Companions
-  content: 'The Companions are a group of people, somewhat famous in {ref_0}. They
-    travel mainly using the {ref_1}, looking for resources, trying to find a safe
+  content: 'The Companions are a group of people, somewhat famous in {ref_0} . They
+    travel mainly using the {ref_1} , looking for resources, trying to find a safe
     place for themselves and helping people along the way.
 
 
