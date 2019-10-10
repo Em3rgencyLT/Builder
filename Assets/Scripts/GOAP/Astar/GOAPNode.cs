@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using ScriptableObjects.GOAP;
 
 namespace GOAP.Astar
 {
@@ -6,7 +7,7 @@ namespace GOAP.Astar
     {
         private readonly PlanAction _planAction;
 
-        public GOAPNode(float g, float h, List<State> appliedState, PlanAction planAction, GOAPNode parent)
+        public GOAPNode(float g, float h, List<GOAPStateValue> appliedState, PlanAction planAction, GOAPNode parent)
         {
             GValue = g;
             HValue = h;
@@ -22,7 +23,7 @@ namespace GOAP.Astar
 
         public float FValue { get; }
         
-        public List<State> AppliedState { get; }
+        public List<GOAPStateValue> AppliedState { get; }
 
         public PlanAction PlanAction => _planAction;
 

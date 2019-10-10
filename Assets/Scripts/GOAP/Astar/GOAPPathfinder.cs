@@ -1,13 +1,14 @@
 using System.Collections.Generic;
 using System.Linq;
+using ScriptableObjects.GOAP;
 
 namespace GOAP.Astar
 {
     //TODO: Generalize me!
     public class GOAPPathfinder
     {
-        private readonly List<State> _start;
-        private readonly List<State> _finish;
+        private readonly List<GOAPStateValue> _start;
+        private readonly List<GOAPStateValue> _finish;
         private readonly List<PlanAction> _searchSpace;
 
         private readonly List<GOAPNode> _openList;
@@ -15,7 +16,7 @@ namespace GOAP.Astar
 
         private const float UselessStepPenalty = 0.2f;
 
-        public GOAPPathfinder(List<State> start, List<State> finish, List<PlanAction> searchSpace)
+        public GOAPPathfinder(List<GOAPStateValue> start, List<GOAPStateValue> finish, List<PlanAction> searchSpace)
         {
             _start = start;
             _finish = finish;
@@ -51,11 +52,7 @@ namespace GOAP.Astar
         private GOAPNode SearchForFinalNode()
         {
             GOAPNode startNode = new GOAPNode(0f, 0f, _start, null, null);
-            if (IsFinishNode(startNode))
-            {
-                return startNode;
-            }
-            ProcessNode(startNode);
+            _openList.Add(startNode);
 
             while (_openList.Count > 0)
             {
@@ -80,7 +77,7 @@ namespace GOAP.Astar
             float penalty = 0;
             _finish.ForEach(desiredState =>
             {
-                State effect = potentialNode.Effects.FirstOrDefault(state => state.Name == desiredState.Name);
+                GOAPStateValue effect = potentialNode.Effects.FirstOrDefault(state => state.State == desiredState.State);
                 if (effect == null)
                 {
                     //effect has no bearing on desired state
@@ -92,7 +89,7 @@ namespace GOAP.Astar
                 }
             });
             
-            potentialNode.Effects.Where(effect => !_finish.Select(state => state.Name).Contains(effect.Name)).ToList().ForEach(
+            potentialNode.Effects.Where(effect => !_finish.Select(state => state.State).Contains(effect.State)).ToList().ForEach(
                 uselessEffect => { penalty += UselessStepPenalty;});
 
             return penalty;
@@ -102,14 +99,14 @@ namespace GOAP.Astar
         {
             List<GOAPNode> neighbours = new List<GOAPNode>();
             _searchSpace
-                .Where(planAction => State.HaveRequirementsBeenMetByStates(planAction.Requirements, node.AppliedState))
+                .Where(planAction => GOAPStateValue.HaveRequirementsBeenMetByStates(planAction.Requirements, node.AppliedState))
                 .ToList()
                 .ForEach(planAction =>
                 {
                     var newNode = new GOAPNode(
                         CalculateCost(node),
                         CalculateHeuristic(planAction),
-                        State.ApplyEffecs(node.AppliedState, planAction.Effects),
+                        GOAPStateValue.ApplyEffects(node.AppliedState, planAction.Effects),
                         planAction,
                         node
                     );
@@ -120,7 +117,7 @@ namespace GOAP.Astar
 
         private bool IsFinishNode(GOAPNode node)
         {
-            return State.HaveRequirementsBeenMetByStates(_finish, node.AppliedState);
+            return GOAPStateValue.HaveRequirementsBeenMetByStates(_finish, node.AppliedState);
         }
 
         private void ProcessNode(GOAPNode node)
@@ -131,6 +128,7 @@ namespace GOAP.Astar
                 .ToList()
                 .ForEach(_openList.Add);
             _closedList.Add(node);
+            _openList.Remove(node);
         }
     }
 }

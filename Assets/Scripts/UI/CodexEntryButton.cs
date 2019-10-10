@@ -1,5 +1,6 @@
 using System;
 using ScriptableObjects;
+using ScriptableObjects.UI;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;

@@ -7,6 +7,7 @@ using Doozy.Engine.Extensions;
 using Enums;
 using Managers;
 using ScriptableObjects;
+using ScriptableObjects.UI;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;

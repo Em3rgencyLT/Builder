@@ -3,7 +3,7 @@ using System.Linq;
 using Data;
 using UnityEngine;
 
-namespace ScriptableObjects
+namespace ScriptableObjects.UI
 {
     [CreateAssetMenu(menuName = "Codex/Entry")]
     public class CodexEntry : ScriptableObject
