@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Data;
 using UnityEngine;
 
 namespace ScriptableObjects
@@ -8,11 +9,11 @@ namespace ScriptableObjects
     public class CodexEntry : ScriptableObject
     {
         [SerializeField] private string label;
-        [SerializeField][TextArea] private string content;
-        [SerializeField] private List<Sprite> images;
+        [SerializeField] [TextArea] private string content;
+        [SerializeField] private List<ImageWithNotation> images;
         [SerializeField] private List<CodexEntry> references;
 
-        public CodexEntry GetReference( string textIndex)
+        public CodexEntry GetReference(string textIndex)
         {
             int.TryParse(textIndex, out var index);
             var matchingEntry = references.ElementAtOrDefault(index);
@@ -21,15 +22,28 @@ namespace ScriptableObjects
                 return matchingEntry;
             }
 
-            Debug.LogError($"Could not find reference id: {textIndex} for entry: {label}.");
+            Debug.LogError($"Could not find Reference of id: {textIndex} for entry: {label}.");
             return null;
         }
-        
+
+        public ImageWithNotation GetImage(string textIndex)
+        {
+            int.TryParse(textIndex, out var index);
+            var matchingEntry = images.ElementAtOrDefault(index);
+            if (matchingEntry != null)
+            {
+                return matchingEntry;
+            }
+            
+            Debug.LogError($"Could not find Image of id: {textIndex} for entry: {label}.");
+            return null;
+        }
+
         public string Label => label;
 
         public string Content => content;
 
-        public List<Sprite> Images => images;
+        public List<ImageWithNotation> Images => images;
 
         public List<CodexEntry> References => references;
     }

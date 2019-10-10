@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   label: The Companions
   content: 'The Companions are a group of people, somewhat famous in {ref_0} . They
-    travel mainly using the {ref_1} , looking for resources, trying to find a safe
-    place for themselves and helping people along the way.
+    travel mainly using the {ref_1} system, looking for resources, trying to find
+    a safe place for themselves and helping people along the way.
 
 
     A list of current companions:
@@ -26,3 +26,6 @@ MonoBehaviour:
   images: []
   references:
   - {fileID: 11400000, guid: daa7709648bca8dc2bc15191fb3ffa46, type: 2}
+  - {fileID: 11400000, guid: 4e3b19e8bc2182114bf5dcc10586fed6, type: 2}
+  - {fileID: 11400000, guid: 3fa5e80b26258314c95f37d378e90b2f, type: 2}
+  - {fileID: 11400000, guid: d857814612e35144db554f2f209a69ac, type: 2}

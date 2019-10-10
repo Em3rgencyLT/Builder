@@ -1,3 +1,4 @@
+using System;
 using ScriptableObjects;
 using TMPro;
 using UnityEngine;
@@ -10,12 +11,12 @@ namespace UI
     {
         [SerializeField] private CodexEntry codexEntry;
 
-        public void AssignCodexEntry(CodexEntry entry)
+        public void AssignCodexEntry(CodexEntry entry, Action onClickCallback)
         {
             codexEntry = entry;
             var text = GetComponentInChildren<TextMeshProUGUI>();
             text.text = entry.Label;
-            //TODO: attach onclick event here
+            GetComponent<Button>().onClick.AddListener(() => onClickCallback());
         }
 
         public CodexEntry CodexEntry => codexEntry;

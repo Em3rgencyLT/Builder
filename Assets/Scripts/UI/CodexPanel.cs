@@ -20,6 +20,7 @@ namespace UI
         [SerializeField] private CodexManager codexManager;
         [SerializeField] private CodexEntryRow codexEntryRowPrefab;
         [SerializeField] private CodexEntryButton entryButtonPrefab;
+        [SerializeField] private CodexEntryImage entryImagePrefab;
         [SerializeField] private TextMeshProUGUI entryTextPrefab;
 
         private List<CodexEntryButton> _indexButtons;
@@ -36,13 +37,13 @@ namespace UI
         
         private void UpdateEntryText(CodexEntry entry)
         {
-            for (int i = 0; i < entryPanel.transform.childCount; i++)
+            for (var i = 0; i < entryPanel.transform.childCount; i++)
             {
                 Destroy(entryPanel.transform.GetChild(i).gameObject);
             }
             var pieces = entry.Content.Split(' ', '\n').ToList();
             SpawnNewEntryRow();
-            pieces.ForEach(piece => CreateTextPiece(entry, piece));
+            pieces.ForEach(piece => ParseTextPiece(entry, piece));
         }
 
         private void SpawnNewEntryRow()
@@ -51,24 +52,38 @@ namespace UI
             Canvas.ForceUpdateCanvases();
         }
         
-        private void CreateTextPiece(CodexEntry entry, string piece)
+        private void ParseTextPiece(CodexEntry entry, string piece)
         {
             var data = CodexDataBit.FromString(piece);
             switch (data.Type)
             {
                 case CodexDataType.Reference:
-                    var matchingEntry = entry.GetReference(data.Value);
-                    CreateIndexButton(matchingEntry, entryPanel.transform, () => SwitchToEntry(matchingEntry), false);
+                    var reference = entry.GetReference(data.Value);
+                    if (reference != null)
+                    {
+                        CreateIndexButton(
+                            reference, 
+                            entryPanel.transform, 
+                            () => SwitchToEntry(reference),
+                            false
+                        );
+                    }
                     return;
                 case CodexDataType.Image:
-                    CreateWord("image.jpg");
+                    var image = entry.GetImage(data.Value);
+                    if (image != null)
+                    {
+                        CreateImage(image);
+                    }
                     return;
                 case CodexDataType.Text:
                     CreateWord(data.Value + "\u00A0");
                     return;
                 case CodexDataType.Newline:
                     SpawnNewEntryRow();
+                    CreateWord("\u00A0");
                     SpawnNewEntryRow();
+                    CreateWord("\u00A0");
                     return;
                 default:
                     return;
@@ -92,8 +107,7 @@ namespace UI
         private void CreateIndexButton(CodexEntry entry, Transform parent, Action onClickCallback, bool addToIndexList)
         {
             CodexEntryButton codexEntryButton = Instantiate(entryButtonPrefab, parent);
-            codexEntryButton.AssignCodexEntry(entry);
-            codexEntryButton.GetComponent<Button>().onClick.AddListener(() => onClickCallback());
+            codexEntryButton.AssignCodexEntry(entry, onClickCallback);
             var textComponent = codexEntryButton.GetComponentInChildren<TextMeshProUGUI>();
             var rectTransform = codexEntryButton.GetComponent<RectTransform>();
             textComponent.alignment = TextAlignmentOptions.Center;
@@ -114,6 +128,12 @@ namespace UI
             LayoutElement layoutElement = codexEntryButton.GetComponent<LayoutElement>();
             layoutElement.minWidth = requiredSpace;
             layoutElement.minHeight = 25;
+        }
+
+        private void CreateImage(ImageWithNotation imageData)
+        {
+            var codexEntryImage = Instantiate(entryImagePrefab, _currentEntryRow.transform);
+            codexEntryImage.AssignData(imageData);
         }
 
         private void CreateWord(string input)

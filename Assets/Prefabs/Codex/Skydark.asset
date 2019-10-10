@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aa4ea2e6ebe4549be64ee12bc3abd9e, type: 3}
+  m_Name: Skydark
+  m_EditorClassIdentifier: 
+  label: Skydark
+  content: 'January 20, 2001. The day when USSR special forced detonated three dirty
+    bombs in the heart of Washington D.C.
+
+
+    What followed was an all out nuclear exchange between the US and USSR, resulting
+    in complete and utter destruction of civilization.
+
+
+    After a decades of harsh nuclear winter, the few survivors on the continental
+    US now live in what is called {ref_0} .'
+  images: []
+  references:
+  - {fileID: 11400000, guid: daa7709648bca8dc2bc15191fb3ffa46, type: 2}
