@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be3452bd6cb54492937ffa9d1283f8f3, type: 3}
+  m_Name: Kill Enemy
+  m_EditorClassIdentifier: 
+  requirements:
+  - _state: 0
+    _value: 1
+  - _state: 3
+    _value: 1
+  - _state: 9
+    _value: 1
+  - _state: 4
+    _value: 1
+  - _state: 11
+    _value: 1
+  effects:
+  - _state: 1
+    _value: 0
+  - _state: 11
+    _value: 0
+  - _state: 9
+    _value: 0
+  resultingAction: {fileID: 11400000, guid: 666fa4588db173d4ca90f1896708fea8, type: 2}

@@ -1,18 +1,18 @@
 using System;
+using GOAP;
 using UnityEngine;
 
 namespace ScriptableObjects.GOAP
 {
-    [CreateAssetMenu(menuName = "GOAP/Wander Action")]
+    [CreateAssetMenu(menuName = "GOAP/Actor/Wander Action")]
     public class WanderAction : ActorAction
     {
-        public override bool DoAction(GameObject actor)
+        public override bool DoAction(Actor actor)
         {
-            Debug.Log($"{actor.name} is executing WanderAction.");
-            return true;
+            return false;
         }
 
-        public override bool DoTargetedAction(GameObject actor, GameObject target)
+        public override bool DoTargetedAction(Actor actor, GameObject target)
         {
             throw new NotSupportedException("WanderAction does not support targeted execution.");
         }

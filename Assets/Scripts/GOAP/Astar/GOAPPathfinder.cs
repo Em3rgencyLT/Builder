@@ -44,6 +44,11 @@ namespace GOAP.Astar
                 parentNode = currentNode.Parent;
             }
 
+            if (result.Count == 0)
+            {
+                return null;
+            }
+
             result.Reverse();
 
             return result;
