@@ -11,16 +11,10 @@ namespace ScriptableObjects.GOAP
         [SerializeField] private List<GOAPStateValue> effects;
         [SerializeField] private ActorAction resultingAction;
 
-        public bool Execute(Actor actor)
+        public bool Execute(Actor actor, GameObject target)
         {
-            Debug.Log($"{actor.name} is executing {name}.");
-            return resultingAction.DoAction(actor);
-        }
-        
-        public bool ExecuteTargeted(Actor actor, GameObject target)
-        {
-            Debug.Log($"{actor.name} is executing {name} with target {target.name}.");
-            return resultingAction.DoTargetedAction(actor, target);
+            Debug.Log($"{actor.name} is executing {name} with target {target}.");
+            return resultingAction.ExecuteAction(actor, target);
         }
 
         public List<GOAPStateValue> Requirements => requirements;

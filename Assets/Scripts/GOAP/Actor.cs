@@ -3,17 +3,25 @@ using Enums;
 using Managers;
 using ScriptableObjects.GOAP;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.Serialization;
 
 namespace GOAP
 {
+    [RequireComponent(typeof(NavMeshAgent))]
     public class Actor : MonoBehaviour
     {
         [SerializeField] private ActorBehaviourPattern behaviourPattern;
         [SerializeField] private ActorPlanManager actorPlanManager;
         [SerializeField] private GameObject debugTarget;
 
+        private NavMeshAgent _navAgent;
         private List<PlanAction> _plan;
+
+        private void Awake()
+        {
+            _navAgent = GetComponent<NavMeshAgent>();
+        }
 
         private void Start()
         {
@@ -42,7 +50,7 @@ namespace GOAP
 
         private void ExecutePlan()
         {
-            var jobOngoing = _plan[0].ExecuteTargeted(this, debugTarget);
+            var jobOngoing = _plan[0].Execute(this, debugTarget);
             if (!jobOngoing)
             {
                 _plan.RemoveAt(0);
@@ -55,5 +63,7 @@ namespace GOAP
         }
 
         public ActorBehaviourPattern BehaviourPattern => behaviourPattern;
+
+        public NavMeshAgent NavAgent => _navAgent;
     }
 }
