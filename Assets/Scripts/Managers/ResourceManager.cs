@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Data;
+using DefaultNamespace;
 using Enums;
 using UnityEngine;
 
@@ -11,23 +12,16 @@ namespace Managers
         [SerializeField] private List<ResourceDisplay> resourceDisplays;
         [SerializeField] private Sprite defaultResourceSprite;
 
+        private List<ResourceDeposit> _resourceDeposits;
+
         private void Awake()
         {
+            _resourceDeposits = new List<ResourceDeposit>();
             if (resourceDisplays == null)
             {
                 resourceDisplays = new List<ResourceDisplay>();
             }
             AddDefaultResources();
-        }
-
-        private void AddDefaultResources()
-        {
-            var jack = new ResourceDisplay(new Resource(ResourceType.Money, 200), defaultResourceSprite);
-            var metal = new ResourceDisplay(new Resource(ResourceType.Metal, 10), defaultResourceSprite);
-            var lumber = new ResourceDisplay(new Resource(ResourceType.Lumber, 10), defaultResourceSprite);
-            var slag = new ResourceDisplay(new Resource(ResourceType.Concrete, 50), defaultResourceSprite);
-            
-            resourceDisplays.AddRange(new[]{jack, metal, lumber, slag});
         }
 
         public List<ResourceDisplay> ResourceDisplays => resourceDisplays;
@@ -36,12 +30,6 @@ namespace Managers
         {
             return resourceDisplays.Select(display => display.Resource).First(resource => resource.ResourceType == type);
         }
-        
-        private ResourceDisplay GetResourceDisplay(ResourceType type)
-        {
-            return resourceDisplays.First(resource => resource.Resource.ResourceType == type);
-        }
-
 
         public bool ModifyResourceAmount(ResourceType type, int change)
         {
@@ -63,6 +51,34 @@ namespace Managers
             );
             resourceDisplays.Add(newResource);
             return true;
+        }
+
+        public void RegisterResourceDeposit(ResourceDeposit deposit)
+        {
+            _resourceDeposits.Add(deposit);
+        }
+
+        public ResourceDeposit FindClosestResource(ResourceType type, Vector3 position)
+        {
+            return _resourceDeposits
+                .Where(deposit => 
+                    deposit.AvailableResources().Contains(type))
+                .Min(deposit =>(Vector3.Distance(deposit.transform.position, position), deposit).Item2);
+        }
+        
+        private ResourceDisplay GetResourceDisplay(ResourceType type)
+        {
+            return resourceDisplays.First(resource => resource.Resource.ResourceType == type);
+        }
+        
+        private void AddDefaultResources()
+        {
+            var jack = new ResourceDisplay(new Resource(ResourceType.Money, 200), defaultResourceSprite);
+            var metal = new ResourceDisplay(new Resource(ResourceType.Metal, 10), defaultResourceSprite);
+            var lumber = new ResourceDisplay(new Resource(ResourceType.Lumber, 10), defaultResourceSprite);
+            var slag = new ResourceDisplay(new Resource(ResourceType.Concrete, 50), defaultResourceSprite);
+            
+            resourceDisplays.AddRange(new[]{jack, metal, lumber, slag});
         }
 
         private bool HasEnoughResource(Resource requirement)
